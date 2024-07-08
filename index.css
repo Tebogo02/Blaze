@@ -1,0 +1,202 @@
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url(Fonts/OpenSans-Regular.ttf);
+}
+:root{
+    --font-family: OpenSans-Regular;
+    --color-1: #6321cc;
+    --color-2: white;
+    --color-3: rgba(0, 0, 0, 0.801);
+    --font-size: 35px;
+    --font-size-2: 17px;
+    --font-size-5: 15px;
+    --font-size-3: 25px;
+    --background-color-second: -webkit-linear-gradient(white, whitesmoke);
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(206, 206, 206);
+}
+.box{
+    display: flex;
+    gap: 8px;
+    /* border: 2px dashed green; */
+    padding: 20px;
+}
+.navbar-main{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    /* border: 1px dashed red; */
+    align-items: center;
+}
+.navbar-main__logo-text{
+    font-family: var(--font-family);
+    font-weight: bold;
+    font-size: var(--font-size);
+    color: var(--color-3);    
+    letter-spacing: 3px;
+
+}
+.navbar__icons{
+    display: flex;
+    gap: 15px;
+}
+.icon-1, .icon-2{
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    transition: .3s;
+}
+.icon-1:hover, .icon-2:hover{
+    transform: scale(1.3, 1.3);
+}
+.icon-1:active, .icon-2:active{
+    transform: scale(1, 1);
+}
+.Btn{
+    font-family: var(--font-family);
+    font-weight: 1000;
+    color: var(--color-2);
+    background-color: var(--color-1);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+    letter-spacing: 1.5px;
+    width: 130px;
+}
+.Btn:hover{
+    background-color: var(--color-3);
+}
+.Btn:active{
+    background-color: #00000079;
+}
+.navbar__menu{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px dashed red; */
+    width: 250px;
+    padding: 20px;
+    gap: 25px;
+    border-radius: 5px;
+    /* box-shadow: 0px 0px 5000px; */
+    height: 100vh;
+    background-image: var(--background-color-second);
+}
+a{
+    font-family: var(--font-family);
+    font-weight: 1000;
+    font-size: var(--font-size-2);
+    text-decoration: none;
+    color: var(--color-3); 
+    transition: .3s;   
+    display: flex;
+    gap: 5px;
+}
+a:hover{
+    color: var(--color-1);
+    transform: scale(1.1) translate(10px);
+}
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.section{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px dashed purple; */
+    width: 1140px;
+}
+.section__right{
+    align-self: flex-end;
+}
+.section__heading{
+    font-size: var(--font-size-3);
+    color: var(--color-3);
+    font-weight: bolder;
+    font-family: var(--font-family);
+    padding: 20px;
+    /* border: 2px dashed orange; */
+    background-color: var(--color-3);
+    color: var(--color-2);
+    letter-spacing: 1px;
+}
+.section__left-Bitcoinbalances{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px dashed red ; */
+    padding: 20px;
+    gap: 10px;
+    /* box-shadow: 0px 0px 5px; */
+    border-radius: 5px;
+    margin-top: 10px;
+    width: min-content;
+    background-image: var(--background-color-second);
+}
+[class ^= "section__left-Bitcoinbalance-"]{
+    font-family: var(--font-family);
+    font-weight: 1000;
+    font-size: var(--font-size-5);
+    color: var(--color-3); 
+}
+[class ^= "section__left-Bitcoinbalance-"]{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+.section__left-Bitcoinbalance-heading{
+    font-size: var(--font-size-3);
+    font-weight: 1000;
+    font-family: var(--font-family);
+    color: var(--color-3);
+    margin-bottom: 10px;
+}
+.section__left-Bitcoinbalances-Buttons{
+    /* border: 1px dashed red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-top: 35px;
+}
+@media (max-width: 1024px){
+    .container{
+        max-width: 850px;
+    }
+}
+@media (max-width: 768px){
+    .container{
+        max-width: 650px;
+    }
+}
+@media (max-width: 568px){
+    .container{
+        max-width: 380px;
+    }
+}
+.navbar__menu{
+    animation-name: menu;
+    animation-duration: .5s;
+}
+@keyframes menu{
+    from{transform: translateY(1000%);}
+}
+.section__left-Bitcoinbalances{
+    animation-name: balances;
+    animation-duration: 1s;
+}
+@keyframes balances{
+    from{transform: translateX(1000%)}
+}
+
+
